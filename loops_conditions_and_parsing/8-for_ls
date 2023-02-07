@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#A bash script that displays the content of the current directory, in a list format, by displaying the part of the name after the first dash and not displaying hidden files
+for file in *
+do
+  if [[ ! $file =~ ^\..* ]]
+  then
+       name=${file#*-}
+       echo "-$name"
+  fi
+done
